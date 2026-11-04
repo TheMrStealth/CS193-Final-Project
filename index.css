@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: black;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 1024px;
+    margin: auto;
+    display: grid;
+    place-content: center;
+}
+
+h1 {
+    text-align: center;   
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 24px;
+    }
+}
