@@ -4,7 +4,7 @@
 }
 
 html {
-    color: black;
+    color: white;
 }
 
 body {
@@ -13,6 +13,8 @@ body {
     margin: auto;
     /* display: grid; */
     place-content: center;
+    /* background-color: #5d4668; */
+    background: linear-gradient(135deg, #2a0845, #6441a5);
 }
 
 h1 {
@@ -43,12 +45,19 @@ h1 {
 }
 
 .inner h1 {
-    
+
 }
 
-/* .inner p {
+.inner div {
     border-style: solid;
-} */
+    border-color: red;
+}
+
+.inner p {
+    border-style: solid;
+    font-size: 120%;
+    font-weight: bold;
+}
 
 .spacer {
     width: 40%;
