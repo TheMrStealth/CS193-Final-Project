@@ -15,7 +15,7 @@ export default async (req) => {
             );
         }
 
-        const steamResponse = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${apiKey}&steamid=${steamId}`);
+        const steamResponse = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${apiKey}&steamids=${steamId}`);
 
         if (!steamResponse.ok) {
             return Response.json(

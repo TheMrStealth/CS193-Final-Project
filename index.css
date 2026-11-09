@@ -42,6 +42,10 @@ h1 {
     display: grid;
 }
 
+.inner h1 {
+    
+}
+
 /* .inner p {
     border-style: solid;
 } */
