@@ -39,8 +39,12 @@ h1 {
     padding: 10px;
     border-color: blue;
     width: 30%;
-    display: grid
+    display: grid;
 }
+
+/* .inner p {
+    border-style: solid;
+} */
 
 .spacer {
     width: 40%;
