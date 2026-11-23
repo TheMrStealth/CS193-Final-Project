@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="index.css">
     <script defer src="main.js"></script>
 </head>
-<body>
+<body onload="clearFields()">
     <!-- <button>Go</button> -->
     <div class="main">
         <div class="inner">
             <h1 id="usr1">User 1</h1>
             <input type="text" id="p1Input" placeholder="Enter Steam ID">
-            <p id="player1Stat1"></p>
-            <p id="player1Stat2"></p>
-            <p id="player1Stat3"></p>
-            <p id="player1Stat4"></p>
-            <p id="player1Stat5"></p>
-            <p id="player1Stat6"></p>
-            <p id="player1Stat7"></p>
-            <p id="player1Stat8"></p>
+            <p id="player1Stat1"><span>Total Kills</span><span id="player1Stat1Value" class="value"></span></p>
+            <p id="player1Stat2"><span>Total Deaths</span><span id="player1Stat2Value" class="value"></span></p>
+            <p id="player1Stat3"><span>Total Knife Kills</span><span id="player1Stat3Value" class="value"></span></p>
+            <p id="player1Stat4"><span>Avg. Win Rate</span><span id="player1Stat4Value" class="value"></span></p>
+            <p id="player1Stat5"><span>Lifetime K/D</span><span id="player1Stat5Value" class="value"></span></p>
+            <p id="player1Stat6"><span>Total $ Earned</span><span id="player1Stat6Value" class="value"></span></p>
+            <p id="player1Stat7"><span>Total Shots Fired</span><span id="player1Stat7Value" class="value"></span></p>
+            <p id="player1Stat8"><span>Lifetime Headshot</span><span id="player1Stat8Value" class="value"></span></p>
         </div>
         <div class="spacer">
             <button onclick="getPlayerData()">Go</button>
@@ -28,14 +28,14 @@
         <div class="inner">
             <h1 id="usr2">User 2</h1>
             <input type="text" id="p2Input" placeholder="Enter Steam ID">
-            <p id="player2Stat1"></p>
-            <p id="player2Stat2"></p>
-            <p id="player2Stat3"></p>
-            <p id="player2Stat4"></p>
-            <p id="player2Stat5"></p>
-            <p id="player2Stat6"></p>
-            <p id="player2Stat7"></p>
-            <p id="player2Stat8"></p>
+            <p id="player2Stat1"><span>Total Kills</span><span id="player2Stat1Value" class="value"></span></p>
+            <p id="player2Stat2"><span>Total Deaths</span><span id="player2Stat2Value" class="value"></span></p>
+            <p id="player2Stat3"><span>Total Knife Kills</span><span id="player2Stat3Value" class="value"></span></p>
+            <p id="player2Stat4"><span>Avg. Win Rate</span><span id="player2Stat4Value" class="value"></span></p>
+            <p id="player2Stat5"><span>Lifetime K/D</span><span id="player2Stat5Value" class="value"></span></p>
+            <p id="player2Stat6"><span>Total $ Earned</span><span id="player2Stat6Value" class="value"></span></p>
+            <p id="player2Stat7"><span>Total Shots Fired</span><span id="player2Stat7Value" class="value"></span></p>
+            <p id="player2Stat8"><span>Lifetime Headshot</span><span id="player2Stat8Value" class="value"></span></p>
         </div>
     </div>
     

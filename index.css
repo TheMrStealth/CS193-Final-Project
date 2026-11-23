@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +19,7 @@ body {
     /* background: linear-gradient(135deg, #2a0845, #6441a5); */
     background-size: cover;
     background-image: url("imgs/cs-go-global-offensive-valve-global-offensive-counter-stri-6.jpg");
+    font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -38,12 +41,22 @@ h1 {
     /* grid-template-columns: 1fr 1fr;
     gap: 1rem; */
     /* background-color: #6d0064; */
-    background: linear-gradient(45deg, rgb(63, 140, 255), rgb(114, 63, 255));
+    /* background: linear-gradient(45deg, rgb(63, 140, 255), rgb(114, 63, 255)); */
+    background-color: #1b2328;
     border-radius: 20px;
 }
 
 button {
-
+    height: 20%;
+    height: 100px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #20292f;
+    /* background-color: transparent; */
+    color: white;
+    margin-top: 10%;
 }
 
 .inner {
@@ -52,6 +65,8 @@ button {
     border-color: blue;
     /* width: 30%; */
     display: grid;
+    /* border-style: solid; */
+    min-width: 25%;
 }
 
 .inner h1 {
@@ -66,14 +81,22 @@ button {
 .inner p {
     border-style: solid;
     font-size: 90%;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 8px;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.919);
+    background-color: #20292f;
+    display: flex;
+}
+
+.inner .value {
+    text-align: right;
+    margin-left: auto;
 }
 
 .spacer {
-    width: 40%;
+    width: 30%;
     min-height: 1px;
     border-color: green;
     display: grid;
