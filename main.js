@@ -8,6 +8,8 @@ const p1Stat5 = document.getElementById("player1Stat5");
 const p1Stat6 = document.getElementById("player1Stat6")
 const p1Stat7 = document.getElementById("player1Stat7");
 const p1Stat8 = document.getElementById("player1Stat8");
+const p1Stat9 = document.getElementById("player1Stat9");
+const p1Stat10 = document.getElementById("player1Stat10");
 
 const p1Stat1V = document.getElementById("player1Stat1Value");
 const p1Stat2V = document.getElementById("player1Stat2Value");
@@ -17,6 +19,8 @@ const p1Stat5V = document.getElementById("player1Stat5Value");
 const p1Stat6V = document.getElementById("player1Stat6Value")
 const p1Stat7V = document.getElementById("player1Stat7Value");
 const p1Stat8V = document.getElementById("player1Stat8Value");
+const p1Stat9V = document.getElementById("player1Stat9Value");
+const p1Stat10V = document.getElementById("player1Stat10Value");
 
 const usr2 = document.getElementById("usr2");
 const p2Input = document.getElementById("p2Input");
@@ -28,6 +32,8 @@ const p2Stat5 = document.getElementById("player2Stat5");
 const p2Stat6 = document.getElementById("player2Stat6");
 const p2Stat7 = document.getElementById("player2Stat7");
 const p2Stat8 = document.getElementById("player2Stat8");
+const p2Stat9 = document.getElementById("player2Stat9");
+const p2Stat10 = document.getElementById("player2Stat10");
 
 const p2Stat1V = document.getElementById("player2Stat1Value");
 const p2Stat2V = document.getElementById("player2Stat2Value");
@@ -37,6 +43,8 @@ const p2Stat5V = document.getElementById("player2Stat5Value");
 const p2Stat6V = document.getElementById("player2Stat6Value")
 const p2Stat7V = document.getElementById("player2Stat7Value");
 const p2Stat8V = document.getElementById("player2Stat8Value");
+const p2Stat9V = document.getElementById("player2Stat9Value");
+const p2Stat10V = document.getElementById("player2Stat10Value");
 
 function getStat(json, stat) {
     try {
@@ -55,6 +63,8 @@ function clearFields() {
     p1Stat6.style.visibility = "hidden"
     p1Stat7.style.visibility = "hidden"
     p1Stat8.style.visibility = "hidden"
+    p1Stat9.style.visibility = "hidden"
+    p1Stat10.style.visibility = "hidden"
 
     p2Stat1.style.visibility = "hidden"
     p2Stat2.style.visibility = "hidden"
@@ -64,6 +74,8 @@ function clearFields() {
     p2Stat6.style.visibility = "hidden"
     p2Stat7.style.visibility = "hidden"
     p2Stat8.style.visibility = "hidden"
+    p2Stat9.style.visibility = "hidden"
+    p2Stat10.style.visibility = "hidden"
 
     usr1.textContent = "User 1";
     p1Stat1V.textContent = "";
@@ -74,6 +86,8 @@ function clearFields() {
     p1Stat6V.textContent = "";
     p1Stat7V.textContent = "";
     p1Stat8V.textContent = "";
+    p1Stat9V.textContent = "";
+    p1Stat10V.textContent = "";
 
     usr2.textContent = "User 2";
     p2Stat1V.textContent = "";
@@ -84,6 +98,8 @@ function clearFields() {
     p2Stat6V.textContent = "";
     p2Stat7V.textContent = "";
     p2Stat8V.textContent = "";
+    p2Stat9V.textContent = "";
+    p2Stat10V.textContent = "";
 }
 
 async function getP1Data() {
@@ -91,6 +107,7 @@ async function getP1Data() {
 
     var steamId = p1Input.value;
     var response = await fetch (`/.netlify/functions/getSteam?steamid=${steamId}`);
+    var leetifyResponse = await fetch (`/.netlify/functions/getLeetify?steamid=${steamId}`);
 
     if (!response.ok) {
         p1Stat1.textContent = "Error";
@@ -116,8 +133,11 @@ async function getP1Data() {
         p1Stat6V.textContent = "";
         p1Stat7V.textContent = "";
         p1Stat8V.textContent = "";
+        p1Stat9V.textContent = "";
+        p1Stat10V.textContent = "";
     } else {
         var p1Text = await response.json();
+        var leetify = await leetifyResponse.json();
         p1Stat1V.textContent = getStat(p1Text, "total_kills");
         p1Stat2V.textContent = getStat(p1Text, "total_deaths");
         p1Stat3V.textContent = getStat(p1Text, "total_kills_knife");
@@ -126,6 +146,8 @@ async function getP1Data() {
         p1Stat6V.textContent = "$" + getStat(p1Text, "total_money_earned");
         p1Stat7V.textContent = getStat(p1Text, "total_shots_fired");
         p1Stat8V.textContent = Math.round((getStat(p1Text, "total_kills_headshot") / getStat(p1Text, "total_kills")) * 100) + "%";
+        p1Stat9V.textContent = leetify.ranks.premier;
+        p1Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
     }
 
     p1Stat1.style.visibility = "visible"
@@ -136,6 +158,8 @@ async function getP1Data() {
     p1Stat6.style.visibility = "visible"
     p1Stat7.style.visibility = "visible"
     p1Stat8.style.visibility = "visible"
+    p1Stat9.style.visibility = "visible"
+    p1Stat10.style.visibility = "visible"
 }
 
 async function getP2Data() {
@@ -143,6 +167,7 @@ async function getP2Data() {
 
     steamId = p2Input.value;
     response = await fetch (`/.netlify/functions/getSteam?steamid=${steamId}`);
+    var leetifyResponse = await fetch (`/.netlify/functions/getLeetify?steamid=${steamId}`);
 
     if (!response.ok) {
         p2Stat1.textContent = "Error";
@@ -170,8 +195,11 @@ async function getP2Data() {
         p2Stat6V.textContent = "";
         p2Stat7V.textContent = "";
         p2Stat8V.textContent = "";
+        p2Stat9V.textContent = "";
+        p2Stat10V.textContent = "";
     } else {
         var p2Text = await response.json()
+        var leetify = await leetifyResponse.json();
         p2Stat1V.textContent = getStat(p2Text, "total_kills");
         p2Stat2V.textContent = getStat(p2Text, "total_deaths");
         p2Stat3V.textContent = getStat(p2Text, "total_kills_knife");
@@ -180,6 +208,8 @@ async function getP2Data() {
         p2Stat6V.textContent = "$" + getStat(p2Text, "total_money_earned");
         p2Stat7V.textContent = getStat(p2Text, "total_shots_fired");
         p2Stat8V.textContent = Math.round((getStat(p2Text, "total_kills_headshot") / getStat(p2Text, "total_kills")) * 100) + "%";
+        p2Stat9V.textContent = leetify.ranks.premier;
+        p2Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
     }
 
     p2Stat1.style.visibility = "visible"
@@ -190,6 +220,8 @@ async function getP2Data() {
     p2Stat6.style.visibility = "visible"
     p2Stat7.style.visibility = "visible"
     p2Stat8.style.visibility = "visible"
+    p2Stat9.style.visibility = "visible"
+    p2Stat10.style.visibility = "visible"
 }
 
 async function getPlayerData() {
