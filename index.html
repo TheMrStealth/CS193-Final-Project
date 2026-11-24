@@ -8,11 +8,11 @@
     <script defer src="main.js"></script>
 </head>
 <body onload="clearFields()">
-    <!-- <button>Go</button> -->
     <div class="main">
         <div class="inner">
             <h1 id="usr1">User 1</h1>
             <input type="text" id="p1Input" placeholder="Enter Steam ID">
+            <!-- Text and stat value have two different id's to allow for better formatting on the web page -->
             <p id="player1Stat1"><span>Total Kills</span><span id="player1Stat1Value" class="value"></span></p>
             <p id="player1Stat2"><span>Total Deaths</span><span id="player1Stat2Value" class="value"></span></p>
             <p id="player1Stat3"><span>Total Knife Kills</span><span id="player1Stat3Value" class="value"></span></p>
@@ -42,10 +42,5 @@
             <p id="player2Stat10"><span>FaceIt</span><span id="player2Stat10Value" class="value"></span></p>
         </div>
     </div>
-    
-    <h1></h1>
-    <!-- <input type="text" id="p1Input">
-    <button onclick="getPlayerData()">Go</button>
-    <p id="player1"></p> -->
 </body>
 </html>

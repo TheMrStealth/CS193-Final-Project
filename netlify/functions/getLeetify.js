@@ -6,6 +6,7 @@ export default async (req) => {
             throw new Error("Missing API Key");
         }
         
+        // Gets the url used to find the function and pulls the Steam id from it. If there was no steam id, it returns an error
         const url = new URL(req.url);
         const steamId = url.searchParams.get("steamid");
 
@@ -15,6 +16,7 @@ export default async (req) => {
             );
         }
 
+        // Gets the response from the Leetify API, passing the API key as a header to verify it is an authorized user. If the request failed, return that it failed
         const leetifyResponse = await fetch(
             `https://api-public.cs-prod.leetify.com/v3/profile?steam64_id=${steamId}`,
             {headers: {"_leetify_key": apiKey}}
@@ -26,6 +28,7 @@ export default async (req) => {
             );
         }
 
+        // Gets the JSON from the Steam response and returns it
         const data = await leetifyResponse.json();
 
         return Response.json(data);

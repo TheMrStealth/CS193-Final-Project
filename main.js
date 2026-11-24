@@ -1,3 +1,4 @@
+// All variables used in getting, hiding, and displaying player 1 stats
 const usr1 = document.getElementById("usr1");
 const p1Input = document.getElementById("p1Input");
 const p1Stat1 = document.getElementById("player1Stat1");
@@ -22,6 +23,7 @@ const p1Stat8V = document.getElementById("player1Stat8Value");
 const p1Stat9V = document.getElementById("player1Stat9Value");
 const p1Stat10V = document.getElementById("player1Stat10Value");
 
+// All variables used in getting, hiding, and displaying player 2 stats
 const usr2 = document.getElementById("usr2");
 const p2Input = document.getElementById("p2Input");
 const p2Stat1 = document.getElementById("player2Stat1");
@@ -46,6 +48,7 @@ const p2Stat8V = document.getElementById("player2Stat8Value");
 const p2Stat9V = document.getElementById("player2Stat9Value");
 const p2Stat10V = document.getElementById("player2Stat10Value");
 
+// Attempts to get the requested stat from the json. If unable to, like if the user has their steam library on hidden, returns NaN
 function getStat(json, stat) {
     try {
         return json.playerstats.stats.find(s => s.name === stat).value;
@@ -54,6 +57,7 @@ function getStat(json, stat) {
     }
 }
 
+// Currently this works well, however, if support gets added for more than two players, this would be switched to some form of array storing the stats to be displayed
 function clearFields() {
     p1Stat1.style.visibility = "hidden"
     p1Stat2.style.visibility = "hidden"
@@ -102,6 +106,8 @@ function clearFields() {
     p2Stat10V.textContent = "";
 }
 
+// Gets the response from the APIs, gets the username to display, then checks if the profile is set to private. This is because a private profile still shows the username,
+// allowing the user to easily determine which one had the private profile.
 async function getP1Data() {
     clearFields();
 
@@ -117,6 +123,7 @@ async function getP1Data() {
     var usrJson = await fetch(`/.netlify/functions/getUsername?steamid=${steamId}`);
     var usrText = await usrJson.json();
 
+    // When an invalid id has been used in the api request, a blank json is returned. This catchees that and displays Invalid Profile
     try {
         usr1.textContent = usrText.response.players[0].personaname;
     } catch (err) {
@@ -124,6 +131,7 @@ async function getP1Data() {
         return
     }
 
+    // Checks if the user's steam profile is set to private
     if (usrText.response.players[0].communityvisibilitystate != 3) {
         p1Stat1V.textContent = "Private Profile";
         p1Stat2V.textContent = "";
@@ -162,6 +170,7 @@ async function getP1Data() {
     p1Stat10.style.visibility = "visible"
 }
 
+// Function mirrors the above one for P1
 async function getP2Data() {
     clearFields();
 
@@ -224,6 +233,7 @@ async function getP2Data() {
     p2Stat10.style.visibility = "visible"
 }
 
+// Runs separate functions for getting each player data so that if one player is invalid the other still displays.
 async function getPlayerData() {
     getP1Data();
     getP2Data();
