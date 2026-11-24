@@ -31,3 +31,56 @@ Planned features, roughly ordered in priority:
 - Tools: Netlify CLI for local testing, Git and GitHub for version control, curl for testing API calls
 - Data source: Steam Web API, free with an API key, returns JSON, only works for public profiles
 - Data storage: None for MVP, stats are fetched live for each comparison
+
+## Setup and Running Instructions
+1. Prerequisites
+- Git
+- Node.js (version 18+) and npm
+- Netlify CLI
+- Steam Web API key
+- Leetify API key
+2. Clone the Repository
+Open a terminal and run
+```bash
+git clone https://github.com/TheMrStealth/CS193-Final-Project.git
+cd CS193-Final-Project
+```
+3. Install Depenencies
+Install the required packages and Netlify CLI
+```bash
+npm install
+npm install -g netlify-cli
+```
+4. Configure API Keys
+Create a .env file in the root directory of the project with the following:
+```
+STEAM_API_KEY=key
+LEETIFY_API_KEY=key
+```
+Replace placeholder values with valid API keys
+5. Deploy Project to Netlify and Add API Keys as Environment Variables
+Deploy the project to Netlify. Once doing so, add both API keys as Environment Variables:
+- Key: variable_name
+- Secret: [X]
+- Fill all Values with API key
+6. Run the Website
+Start the local development server
+```
+netlify dev
+```
+
+## Roadmap
+- [X] Pull data from Steam API
+- [X] Input fields for two players
+- [X] Side-by-side comparison of basic stats
+- [X] Add backend proxy
+- [X] Add private profile and ID handling
+- [X] Deploy site using Netlify
+- [X] Pull data from Leetify
+- [] Dark mode
+- [] Mobile friendly layout
+- [] Make charts for each category
+- [] Team creation for stat comparison
+
+## Demo
+https://youtu.be/7VdMvFcnOJ4
