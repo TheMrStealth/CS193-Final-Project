@@ -58,58 +58,107 @@ function getStat(json, stat) {
 }
 
 // Currently this works well, however, if support gets added for more than two players, this would be switched to some form of array storing the stats to be displayed
-function clearFields() {
-    p1Stat1.style.visibility = "hidden"
-    p1Stat2.style.visibility = "hidden"
-    p1Stat3.style.visibility = "hidden"
-    p1Stat4.style.visibility = "hidden"
-    p1Stat5.style.visibility = "hidden"
-    p1Stat6.style.visibility = "hidden"
-    p1Stat7.style.visibility = "hidden"
-    p1Stat8.style.visibility = "hidden"
-    p1Stat9.style.visibility = "hidden"
-    p1Stat10.style.visibility = "hidden"
+function clearFields(player) {
 
-    p2Stat1.style.visibility = "hidden"
-    p2Stat2.style.visibility = "hidden"
-    p2Stat3.style.visibility = "hidden"
-    p2Stat4.style.visibility = "hidden"
-    p2Stat5.style.visibility = "hidden"
-    p2Stat6.style.visibility = "hidden"
-    p2Stat7.style.visibility = "hidden"
-    p2Stat8.style.visibility = "hidden"
-    p2Stat9.style.visibility = "hidden"
-    p2Stat10.style.visibility = "hidden"
+    if (player == 0) {
+        p1Stat1.style.visibility = "hidden"
+        p1Stat2.style.visibility = "hidden"
+        p1Stat3.style.visibility = "hidden"
+        p1Stat4.style.visibility = "hidden"
+        p1Stat5.style.visibility = "hidden"
+        p1Stat6.style.visibility = "hidden"
+        p1Stat7.style.visibility = "hidden"
+        p1Stat8.style.visibility = "hidden"
+        p1Stat9.style.visibility = "hidden"
+        p1Stat10.style.visibility = "hidden"
 
-    usr1.textContent = "User 1";
-    p1Stat1V.textContent = "";
-    p1Stat2V.textContent = "";
-    p1Stat3V.textContent = "";
-    p1Stat4V.textContent = "";
-    p1Stat5V.textContent = "";
-    p1Stat6V.textContent = "";
-    p1Stat7V.textContent = "";
-    p1Stat8V.textContent = "";
-    p1Stat9V.textContent = "";
-    p1Stat10V.textContent = "";
+        usr1.textContent = "User 1";
+        p1Stat1V.textContent = "";
+        p1Stat2V.textContent = "";
+        p1Stat3V.textContent = "";
+        p1Stat4V.textContent = "";
+        p1Stat5V.textContent = "";
+        p1Stat6V.textContent = "";
+        p1Stat7V.textContent = "";
+        p1Stat8V.textContent = "";
+        p1Stat9V.textContent = "";
+        p1Stat10V.textContent = "";
 
-    usr2.textContent = "User 2";
-    p2Stat1V.textContent = "";
-    p2Stat2V.textContent = "";
-    p2Stat3V.textContent = "";
-    p2Stat4V.textContent = "";
-    p2Stat5V.textContent = "";
-    p2Stat6V.textContent = "";
-    p2Stat7V.textContent = "";
-    p2Stat8V.textContent = "";
-    p2Stat9V.textContent = "";
-    p2Stat10V.textContent = "";
+        p2Stat1.style.visibility = "hidden"
+        p2Stat2.style.visibility = "hidden"
+        p2Stat3.style.visibility = "hidden"
+        p2Stat4.style.visibility = "hidden"
+        p2Stat5.style.visibility = "hidden"
+        p2Stat6.style.visibility = "hidden"
+        p2Stat7.style.visibility = "hidden"
+        p2Stat8.style.visibility = "hidden"
+        p2Stat9.style.visibility = "hidden"
+        p2Stat10.style.visibility = "hidden"
+    
+        usr2.textContent = "User 2";
+        p2Stat1V.textContent = "";
+        p2Stat2V.textContent = "";
+        p2Stat3V.textContent = "";
+        p2Stat4V.textContent = "";
+        p2Stat5V.textContent = "";
+        p2Stat6V.textContent = "";
+        p2Stat7V.textContent = "";
+        p2Stat8V.textContent = "";
+        p2Stat9V.textContent = "";
+        p2Stat10V.textContent = "";
+    } else if (player == 1) {
+        p1Stat1.style.visibility = "hidden"
+        p1Stat2.style.visibility = "hidden"
+        p1Stat3.style.visibility = "hidden"
+        p1Stat4.style.visibility = "hidden"
+        p1Stat5.style.visibility = "hidden"
+        p1Stat6.style.visibility = "hidden"
+        p1Stat7.style.visibility = "hidden"
+        p1Stat8.style.visibility = "hidden"
+        p1Stat9.style.visibility = "hidden"
+        p1Stat10.style.visibility = "hidden"
+
+        usr1.textContent = "User 1";
+        p1Stat1V.textContent = "";
+        p1Stat2V.textContent = "";
+        p1Stat3V.textContent = "";
+        p1Stat4V.textContent = "";
+        p1Stat5V.textContent = "";
+        p1Stat6V.textContent = "";
+        p1Stat7V.textContent = "";
+        p1Stat8V.textContent = "";
+        p1Stat9V.textContent = "";
+        p1Stat10V.textContent = "";
+    } else if (player == 2) {
+        p2Stat1.style.visibility = "hidden"
+        p2Stat2.style.visibility = "hidden"
+        p2Stat3.style.visibility = "hidden"
+        p2Stat4.style.visibility = "hidden"
+        p2Stat5.style.visibility = "hidden"
+        p2Stat6.style.visibility = "hidden"
+        p2Stat7.style.visibility = "hidden"
+        p2Stat8.style.visibility = "hidden"
+        p2Stat9.style.visibility = "hidden"
+        p2Stat10.style.visibility = "hidden"
+    
+        usr2.textContent = "User 2";
+        p2Stat1V.textContent = "";
+        p2Stat2V.textContent = "";
+        p2Stat3V.textContent = "";
+        p2Stat4V.textContent = "";
+        p2Stat5V.textContent = "";
+        p2Stat6V.textContent = "";
+        p2Stat7V.textContent = "";
+        p2Stat8V.textContent = "";
+        p2Stat9V.textContent = "";
+        p2Stat10V.textContent = "";
+    }
 }
 
 // Gets the response from the APIs, gets the username to display, then checks if the profile is set to private. This is because a private profile still shows the username,
 // allowing the user to easily determine which one had the private profile.
 async function getP1Data() {
-    clearFields();
+    clearFields(1);
 
     var steamId = p1Input.value;
     var response = await fetch (`/.netlify/functions/getSteam?steamid=${steamId}`);
@@ -154,8 +203,10 @@ async function getP1Data() {
         p1Stat6V.textContent = "$" + getStat(p1Text, "total_money_earned");
         p1Stat7V.textContent = getStat(p1Text, "total_shots_fired");
         p1Stat8V.textContent = Math.round((getStat(p1Text, "total_kills_headshot") / getStat(p1Text, "total_kills")) * 100) + "%";
-        p1Stat9V.textContent = leetify.ranks.premier;
-        p1Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
+        if (leetify.error != "Leetify API request failed") {
+            p1Stat9V.textContent = leetify.ranks.premier;
+            p1Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
+        }
     }
 
     p1Stat1.style.visibility = "visible"
@@ -172,7 +223,7 @@ async function getP1Data() {
 
 // Function mirrors the above one for P1
 async function getP2Data() {
-    clearFields();
+    clearFields(2);
 
     steamId = p2Input.value;
     response = await fetch (`/.netlify/functions/getSteam?steamid=${steamId}`);
@@ -217,8 +268,10 @@ async function getP2Data() {
         p2Stat6V.textContent = "$" + getStat(p2Text, "total_money_earned");
         p2Stat7V.textContent = getStat(p2Text, "total_shots_fired");
         p2Stat8V.textContent = Math.round((getStat(p2Text, "total_kills_headshot") / getStat(p2Text, "total_kills")) * 100) + "%";
-        p2Stat9V.textContent = leetify.ranks.premier;
-        p2Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
+        if (leetify.error != "Leetify API request failed") {
+            p2Stat9V.textContent = leetify.ranks.premier;
+            p2Stat10V.textContent = leetify.ranks.faceit + " (" + leetify.ranks.faceit_elo + ")";
+        }
     }
 
     p2Stat1.style.visibility = "visible"
