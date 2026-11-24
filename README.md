@@ -77,10 +77,10 @@ netlify dev
 - [X] Add private profile and ID handling
 - [X] Deploy site using Netlify
 - [X] Pull data from Leetify
-- [] Dark mode
-- [] Mobile friendly layout
-- [] Make charts for each category
-- [] Team creation for stat comparison
+- [ ] Dark mode
+- [ ] Mobile friendly layout
+- [ ] Make charts for each category
+- [ ] Team creation for stat comparison
 
 ## Demo
 https://youtu.be/7VdMvFcnOJ4
