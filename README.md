@@ -1,6 +1,15 @@
 # CS2 Player Comparison
 A website for comparing two players' lifetime Counter-Strike 2 (CS2) stats side-by-side, using data from Steam's Web API.
 
+## The Problem
+Currently, to compare the CS2 stats of two players, you have to open two separate tabs and compare them manually, which takes more time and system usage.
+
+## How It Works
+This website takes in one or two Steam IDs and then sends them to three backend Netlify functions to keep the API keys hidden. Two of the functions call Steam's Web API and the third Leetify's API. 
+The JSONs are then read out of the responses from the API calls, where the username and specific CS2 stats are grabbed and then displayed on the website side-by-side with the other player's stats. If the Steam ID is invalid or the user profile is private a message will be displayed on the website to allow the user to understand why it did not show any stats. If just one Steam ID is entered, it will show the stats of the entered Steam ID and display nothing for the other. If the user of the Steam ID entered has never played the game before or their library is private, it will display "NaN" for all values.
+
+![Alt text](imgs/cs-go-global-offensive-valve-global-offensive-counter-stri-6.jpg)
+
 ## Project Goal
 The goal of this project is to create a website where someone can easily compare the CS2 stats of two players.
 
