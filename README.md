@@ -93,3 +93,6 @@ netlify dev
 
 ## Demo
 https://youtu.be/7VdMvFcnOJ4
+
+## URL
+https://cs2statcompare.rjgil.app/
